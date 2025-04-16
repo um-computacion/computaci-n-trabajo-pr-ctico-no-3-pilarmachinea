@@ -1,20 +1,10 @@
-from exceptions import ingrese_numero
+from mis_exceptions import ingrese_numero, NumeroDebeSerPositivo
 
-def main():
-    """
-    Programa principal que solicita números al usuario y muestra los resultados.
-    """
-    while True:
-        try:
-            numero = ingrese_numero()
-            print(f"Número válido: {numero}")
-        except ValueError as e:
-            print(f"Error: {e}")
-        except NumeroDebeSerPositivo as e:
-            print(f"Error: {e}")
-        except KeyboardInterrupt:
-            print("\nPrograma finalizado.")
-            break
+def sumar_dos_numeros():
+    num1 = ingrese_numero("Ingrese el primer número: ")
+    num2 = ingrese_numero("Ingrese el segundo número: ")
+    resultado = num1 + num2
+    print(f"La suma de los números es: {resultado}")
 
 if __name__ == "__main__":
-    main() 
+    sumar_dos_numeros()
